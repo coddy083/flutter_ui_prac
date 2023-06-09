@@ -10,11 +10,25 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
+    // final screenWidth = MediaQuery.of(context).size.width; // 가로길이 계산
+
     return MaterialApp(
       home: Scaffold(
         backgroundColor: const Color(0xFF181818),
+        appBar: AppBar(
+          title: const Text('Sign'),
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.person),
+              iconSize: 35,
+              onPressed: () {},
+            ),
+          ],
+          backgroundColor: Colors.black,
+        ),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -124,26 +138,23 @@ class MyApp extends StatelessWidget {
                   amount: '6 428',
                   icon: Icons.euro_rounded,
                   isInvert: false,
+                  sequence: 1,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrentcyCard(
-                    name: 'Bitcoin',
-                    code: 'BTC',
-                    amount: '9 785',
-                    icon: Icons.currency_bitcoin_rounded,
-                    isInvert: true,
-                  ),
+                const CurrentcyCard(
+                  name: 'Bitcoin',
+                  code: 'BTC',
+                  amount: '9 785',
+                  icon: Icons.currency_bitcoin_rounded,
+                  isInvert: true,
+                  sequence: 2,
                 ),
-                Transform.translate(
-                  offset: const Offset(0, -20),
-                  child: const CurrentcyCard(
-                    name: 'Dollor',
-                    code: 'USD',
-                    amount: '66 728',
-                    icon: Icons.attach_money_rounded,
-                    isInvert: false,
-                  ),
+                const CurrentcyCard(
+                  name: 'Dollor',
+                  code: 'USD',
+                  amount: '66 728',
+                  icon: Icons.attach_money_rounded,
+                  isInvert: false,
+                  sequence: 3,
                 ),
               ],
             ),
