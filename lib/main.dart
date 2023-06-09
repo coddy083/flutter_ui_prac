@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         backgroundColor: const Color(0xFF181818),
         appBar: AppBar(
-          title: const Text('Sign'),
+          title: const Text('Ui 연습'),
+          elevation: 1,
+          shadowColor: Colors.white,
           actions: [
             IconButton(
               icon: const Icon(Icons.person),
